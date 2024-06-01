@@ -8,6 +8,6 @@ def index():
     my_set = {"Hello World my name is: Daniel Armas"}
     return jsonify(list(my_set))
 
-
 if __name__ == '__main__':
-    app.run(debug=True, port=os.getenv("PORT", default=6856))
+    port = int(os.getenv("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
